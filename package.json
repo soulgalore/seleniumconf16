@@ -1,0 +1,22 @@
+{
+  "description": "seleniumconf16",
+  "version": "0.0.1",
+  "dependencies": {
+    "selenium-webdriver": "v3.0.0-beta-3"
+    },
+
+    "engines": {
+    "node": ">=6.9.1"
+  },
+  "scripts": {
+    "lint": "npm run eslint",
+    "eslint": "eslint ."
+  },
+  "devDependencies": {
+     "eslint": "^3.5.0",
+    "eslint-config-airbnb-base": "^7.1.0",
+    "eslint-plugin-import": "^1.15.0"
+  },
+
+  "license": "MIT"
+}
