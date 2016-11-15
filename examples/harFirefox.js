@@ -2,6 +2,7 @@
 
 const webdriver = require('selenium-webdriver');
 const firefox = require('selenium-webdriver/firefox');
+const path = require('path');
 
 const profile = new firefox.Profile();
 // HAR export - see http://www.softwareishard.com/blog/har-export-trigger/
@@ -12,7 +13,7 @@ profile.setPreference('devtools.netmonitor.har.includeResponseBodies', false);
 
 // Download from the version page, the default URL shows wrong latest version
 // https://addons.mozilla.org/sv-se/firefox/addon/har-export-trigger/versions/?page=1#version-0.5.0-beta.10
-profile.addExtension('../support/har_export_trigger-0.5.0-beta.10-fx.xpi');
+profile.addExtension(path.resolve(path.join(__dirname, '..', '/support/har_export_trigger-0.5.0-beta.10-fx.xpi')));
 
 const ffOptions = new firefox.Options();
 ffOptions.setProfile(profile);
