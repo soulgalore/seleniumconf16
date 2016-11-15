@@ -8,14 +8,14 @@ const driver = new webdriver.Builder()
   .build();
 
 const script = 'var firstPaint = window.chrome.loadTimes().firstPaintTime * 1000;' +
-    'var startTime = window.chrome.loadTimes().startLoadTime*1000;'
+  'var startTime = window.chrome.loadTimes().startLoadTime*1000;' +
   'return firstPaint - startTime;';
 
-driver.get('http://2016.seleniumconf.co.uk/')
+driver.get('https://www.sitespeed.io/')
   .then(() =>
     driver.executeScript(script)
   )
   .then((result) => {
     console.log('FirstPaint: %d ms', result);
   })
-  .finally(driver.quit);
+  .then(driver.quit());
